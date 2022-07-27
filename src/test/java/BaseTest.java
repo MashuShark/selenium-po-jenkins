@@ -1,9 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.BasePage;
@@ -13,11 +11,6 @@ import pages.SearchResultPage;
 
 public class BaseTest {
     private WebDriver driver;
-
-    protected BasePage getBasePage() {
-        return new BasePage(getDriver());
-    }
-
 
     // clear all cookies and local storage after each iteration
     public final boolean CLEAR_COOKIES_AND_STORAGE = true;
@@ -41,14 +34,14 @@ public class BaseTest {
         driver.get(GOOGLE_URL);
     }
 
-    @AfterTest
-    public void clearCookiesAndLocalStorage() {
-        if (CLEAR_COOKIES_AND_STORAGE) {
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            driver.manage().deleteAllCookies();
-            javascriptExecutor.executeScript("window.localStorage.clear();");
-        }
-    }
+//    @AfterTest
+//    public void clearCookiesAndLocalStorage() {
+//        if (CLEAR_COOKIES_AND_STORAGE) {
+//            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+//            driver.manage().deleteAllCookies();
+//            javascriptExecutor.executeScript("window.localStorage.clear();");
+//        }
+//    }
 
     @AfterMethod
     public void close() {

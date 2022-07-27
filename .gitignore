@@ -1,0 +1,6 @@
+.idea
+idea/**
+allure-results
+allure-results/**
+target
+target/**
