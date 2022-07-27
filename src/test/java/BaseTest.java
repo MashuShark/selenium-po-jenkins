@@ -43,7 +43,7 @@ public class BaseTest {
                 new URL("http://chrome:3000/webdriver"),
                 chromeOptions
         );
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         driver.get(GOOGLE_URL);
     }
 
