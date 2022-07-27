@@ -26,23 +26,23 @@ public class FinancePage extends BasePage{
 
     public double getInterbankSellUSD(){
         return Double.parseDouble(
-               interbankUSDList.get(0).getText().split("\n")[0]
+               interbankUSDList.get(0).getText().split(" ")[0]
         );
     }
     public double getInterbankBuyUSD(){
         return Double.parseDouble(
-                interbankUSDList.get(1).getText().split("\n")[0]
+                interbankUSDList.get(1).getText().split(" ")[0]
         );
     }
 
     public double getCashSellUSD(){
         return Double.parseDouble(
-                cashUSDList.get(0).getText().split("\n")[0]
+                cashUSDList.get(0).getText().split(" ")[0]
         );
     }
     public double getCashBuyUSD(){
         return Double.parseDouble(
-                cashUSDList.get(1).getText().split("\n")[0]
+                cashUSDList.get(1).getText().split(" ")[0]
         );
     }
 }
