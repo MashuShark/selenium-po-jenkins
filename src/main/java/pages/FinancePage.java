@@ -20,6 +20,10 @@ public class FinancePage extends BasePage{
             By.xpath("//a[@data-gtm-ea='cash-$-button']//span[@class='fua-xrates__value']")
     );
 
+    public List<WebElement> moneychangerUSDList = driver.findElements(
+            By.xpath("//a[@data-gtm-ea='miniaylo-$-button']//span[@class='fua-xrates__value']")
+    );
+
     public FinancePage(WebDriver driver) {
         super(driver);
     }
@@ -43,6 +47,17 @@ public class FinancePage extends BasePage{
     public double getCashBuyUSD(){
         return Double.parseDouble(
                 cashUSDList.get(1).getText().split(" ")[0]
+        );
+    }
+
+    public double getMoneychangerSellUSD(){
+        return Double.parseDouble(
+                moneychangerUSDList.get(0).getText().split(" ")[0]
+        );
+    }
+    public double getMoneychangerBuyUSD(){
+        return Double.parseDouble(
+                moneychangerUSDList.get(1).getText().split(" ")[0]
         );
     }
 }
