@@ -6,7 +6,6 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     @Test(priority = 1)
     public void verifyThatDiffBetweenInterbankAndCashSellUSDLessOrEqual5() {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
-
         getDriver().findElement(getSearchResultPage().financeLink).click();
         getDriver().findElement(getFinancePage().interbankButton).click();
 
@@ -24,9 +23,7 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     @Test(priority = 2)
     public void verifyThatDiffBetweenInterbankAndCashBuyUSDLessOrEqual5() {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
-
         getDriver().findElement(getSearchResultPage().financeLink).click();
-
         getFinancePage().moveToElement(getFinancePage().interbankButton);
         getDriver().findElement(getFinancePage().interbankButton).click();
 
@@ -43,8 +40,8 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     @Test (priority = 3)
     public void verifyThatDiffBetweenInterbankAndMoneychangerSellUSDLessOrEqual5(){
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
-
         getDriver().findElement(getSearchResultPage().financeLink).click();
+        getFinancePage().moveToElement(getFinancePage().interbankButton);
         getDriver().findElement(getFinancePage().interbankButton).click();
 
         double interbankSellUSD = getFinancePage().getInterbankSellUSD();
@@ -60,8 +57,8 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     @Test(priority = 4)
     public void verifyThatDiffBetweenInterbankAndMoneychangerBuyUSDLessOrEqual5() {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
-
         getDriver().findElement(getSearchResultPage().financeLink).click();
+        getFinancePage().moveToElement(getFinancePage().interbankButton);
         getDriver().findElement(getFinancePage().interbankButton).click();
 
         double interbankBuyUSD = getFinancePage().getInterbankBuyUSD();
@@ -79,6 +76,7 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     public void verifyThatDiffBetweenCashAndMoneychangerSellUSDLessOrEqual5() {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
         getDriver().findElement(getSearchResultPage().financeLink).click();
+        getFinancePage().moveToElement(getFinancePage().cashButton);
         getDriver().findElement(getFinancePage().cashButton).click();
 
         double cashSellUSD = getFinancePage().getCashSellUSD();
@@ -95,6 +93,7 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
     public void verifyThatDiffBetweenCashAndMoneychangerBuySDLessOrEqual5() {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
         getDriver().findElement(getSearchResultPage().financeLink).click();
+        getFinancePage().moveToElement(getFinancePage().cashButton);
         getDriver().findElement(getFinancePage().cashButton).click();
 
         double cashBuyUSD = getFinancePage().getCashBuyUSD();
