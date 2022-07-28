@@ -26,6 +26,8 @@ public class DiffBetweenExchangeRateTest extends BaseTest {
         getHomePage().searchQuery(getHomePage().searchInput, getHomePage().SEARCH_FINANCE);
 
         getDriver().findElement(getSearchResultPage().financeLink).click();
+
+        getFinancePage().moveToElement(getFinancePage().interbankButton);
         getDriver().findElement(getFinancePage().interbankButton).click();
 
         double interbankBuyUSD = getFinancePage().getInterbankBuyUSD();
